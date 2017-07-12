@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const tty = require('tty');
 
 // const tessel = require('tessel');
 
@@ -34,10 +35,10 @@ const render = require('react-blessed').render;
 // }
 
 const screen = blessed.screen({
-    autoPadding: true,
-    smartCSR: true,
-    input: fs.createReadStream('/dev/ttyUSB0'),
-    output: fs.createWriteStream('/dev/ttyUSB0'),
+    // autoPadding: true,
+    // smartCSR: true,
+    input: new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r')),
+    output: new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w')),
     title: 'Twitty'
 });
 
