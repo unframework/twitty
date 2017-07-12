@@ -1,0 +1,17 @@
+{
+  "name": "twitty",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Matantsev <nick.matantsev@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "react": "^0.14.0",
+    "react-blessed": "^0.1.8",
+    "t2-cli": "^0.1.5"
+  }
+}
