@@ -41,8 +41,9 @@ out.columns = 80;
 out.rows = 24;
 
 const screen = blessed.screen({
-    // autoPadding: true,
-    // smartCSR: true,
+    autoPadding: true,
+    smartCSR: true,
+    terminal: 'vt220',
     input: new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r')),
     output: out,
     title: 'Twitty'
