@@ -34,11 +34,17 @@ const render = require('react-blessed').render;
 //   }
 // }
 
+const out = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
+
+console.log('SIZE', out.columns, out.rows);
+out.columns = 80;
+out.rows = 24;
+
 const screen = blessed.screen({
     // autoPadding: true,
     // smartCSR: true,
     input: new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r')),
-    output: new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w')),
+    output: out,
     title: 'Twitty'
 });
 
