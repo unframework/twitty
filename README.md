@@ -1,3 +1,11 @@
+# TwiTTY
+
+## Development
+
+```
+npm install
+node_modules/.bin/t2 run index.js
+```
 
 ## SSH
 
