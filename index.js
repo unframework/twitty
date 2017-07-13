@@ -34,18 +34,19 @@ const render = require('react-blessed').render;
 //   }
 // }
 
-const out = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
+const inputStream = new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r'));
+const outputStream = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
 
-console.log('SIZE', out.columns, out.rows);
-out.columns = 80;
-out.rows = 24;
+// @todo fix size detection at TTY driver level
+outputStream.columns = 80;
+outputStream.rows = 24;
 
 const screen = blessed.screen({
     autoPadding: true,
     smartCSR: true,
     terminal: 'vt220',
-    input: new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r')),
-    output: out,
+    input: inputStream,
+    output: outputStream,
     title: 'Twitty'
 });
 
