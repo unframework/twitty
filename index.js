@@ -13,6 +13,9 @@ const outputStream = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
 outputStream.columns = 80;
 outputStream.rows = 24;
 
+// const inputStream = process.stdin;
+// const outputStream = process.stdout;
+
 const screen = blessed.screen({
     autoPadding: true,
     smartCSR: true,
