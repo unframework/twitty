@@ -1,19 +1,5 @@
-
 const fs = require('fs');
 const tty = require('tty');
-
-// const tessel = require('tessel');
-
-// const errLED = tessel.led[0];
-
-// setInterval(function () {
-//     if (errLED.isOn) {
-//         errLED.off();
-//     } else {
-//         errLED.on();
-//     }
-// }, 500);
-
 const React = require('react');
 const blessed = require('blessed');
 const render = require('react-blessed').render;
@@ -60,17 +46,7 @@ var box = blessed.box({
   tags: true,
   border: {
     type: 'line'
-  },
-  // style: {
-  //   fg: 'white',
-  //   bg: 'magenta',
-  //   border: {
-  //     fg: '#f0f0f0'
-  //   },
-  //   hover: {
-  //     bg: 'green'
-  //   }
-  // }
+  }
 });
 
 // Append our box to the screen.
