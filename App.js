@@ -1,3 +1,5 @@
+'use strict';
+
 const React = require('react');
 
 // Rendering a simple centered box
