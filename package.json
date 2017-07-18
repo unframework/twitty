@@ -13,8 +13,10 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
     "blessed": "^0.1.81",
+    "feedparser": "^2.2.1",
     "react": "^0.14.0",
     "react-blessed": "^0.1.8",
+    "request": "^2.81.0",
     "t2-cli": "^0.1.5"
   }
 }
