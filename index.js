@@ -4,7 +4,9 @@ const React = require('react');
 const blessed = require('blessed');
 const render = require('react-blessed').render;
 
-const App = require('./App');
+require('babel-register');
+
+const App = require('./src/App.jsx');
 
 const inputStream = new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r'));
 const outputStream = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));

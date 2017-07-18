@@ -19,21 +19,19 @@ class App extends React.Component {
     }
 
     render() {
-        return React.createElement(
-            'box',
-            {
-                top: "center",
-                left: "center",
-                width: "50%",
-                height: "50%",
-                border: { type: 'line' }
-            },
-            blessed.parseTags(
+        return <box
+            top="center"
+            left="center"
+            width="50%"
+            height="50%"
+            border={{ type: 'line' }}
+        >
+            {blessed.parseTags(
                 this.state.on
                     ? 'Hello {bold}Reactive{/bold} World!'
                     : 'Hello Reactive World!'
-            )
-        );
+            )}
+        </box>;
     }
 }
 

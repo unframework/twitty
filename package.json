@@ -9,6 +9,9 @@
   "author": "Nick Matantsev <nick.matantsev@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
     "blessed": "^0.1.81",
     "react": "^0.14.0",
     "react-blessed": "^0.1.8",
