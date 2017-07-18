@@ -8,20 +8,20 @@ require('babel-register');
 
 const App = require('./src/App.jsx');
 
-const inputStream = new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r'));
-const outputStream = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
+// const inputStream = new tty.ReadStream(fs.openSync('/dev/ttyUSB0', 'r'));
+// const outputStream = new tty.WriteStream(fs.openSync('/dev/ttyUSB0', 'w'));
 
-// @todo fix size detection at TTY driver level
-outputStream.columns = 80;
-outputStream.rows = 24;
+// // @todo fix size detection at TTY driver level
+// outputStream.columns = 80;
+// outputStream.rows = 24;
 
-// const inputStream = process.stdin;
-// const outputStream = process.stdout;
+const inputStream = process.stdin;
+const outputStream = process.stdout;
 
 const screen = blessed.screen({
     autoPadding: true,
     smartCSR: true,
-    terminal: 'vt220',
+    // terminal: 'vt220',
     input: inputStream,
     output: outputStream,
     title: 'Twitty'
